@@ -3,14 +3,15 @@ import React from 'react';
 import { useState } from 'react';
 import { Button, Form, Input, Label } from './ContactForm.styled';
 
-export const ContactForm = saveDataToState => {
+export const ContactForm = ({ saveDataToState }) => {
   const [name, setName] = useState('');
 
   const [number, setNumber] = useState('');
-
+  
   const handleSubmit = e => {
     e.preventDefault();
     saveDataToState(name, number);
+    
     e.target.reset();
   };
 
